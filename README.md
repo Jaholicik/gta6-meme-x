@@ -17,10 +17,10 @@ GTA-style characters into one Vice City beach shot; all the lettering was
 drawn programmatically for a clean, readable finish.
 
 **The program:** `main.ts` (Node 22, standard library only, no network)
-writes the meme PNG byte-for-byte to the output directory:
+copies `POST.json` — which names the X post that carries this meme as its
+first picture — into the output directory, after checking the address is a
+well-formed X post URL:
 
 ```
-node main.ts            # writes output/entry.png
+mkdir -p out && MAKEFUN_BOT_DIR=. MAKEFUN_OUTPUT_DIR=out node main.ts
 ```
-
-`POST.json` names the X post that carries this meme as its first picture.
